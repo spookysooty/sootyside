@@ -72,11 +72,31 @@
       max-width: 280px; /* Largeur maximale de l'image */
       height: auto;
       margin-bottom: 20px;
+      position: relative; /* Nécessaire pour positionner le texte dessus */
     }
 
-    /* Enlever la marge du dernier élément */
-    .sidebar img:last-child {
-      margin-bottom: 0;
+    /* Conteneur du texte */
+    .image-text {
+      position: absolute; /* Positionne le texte sur l'image */
+      top: 50%; /* Centre verticalement */
+      left: 50%; /* Centre horizontalement */
+      transform: translate(-50%, -50%); /* Ajuste la position exacte au centre */
+      font-size: 20px;
+      font-family: 'Cooper Black', sans-serif;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour mieux voir le texte */
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour le texte */
+      opacity: 0; /* Cache le texte par défaut */
+      transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition du texte */
+      text-align: center;
+    }
+
+    /* Effet au survol (hover) */
+    .sidebar img:hover .image-text {
+      opacity: 1; /* Affiche le texte au survol */
+      background-color: rgba(255, 255, 255, 0.8); /* Change le fond en blanc transparent */
+      color: #ea7a42; /* Change la couleur du texte */
     }
 
   </style>
@@ -86,9 +106,18 @@
   <div class="container">
     <!-- Bloc à gauche -->
     <div class="sidebar">
-      <img src="https://via.placeholder.com/280x180?text=Image+Left+1" alt="Image Left 1">
-      <img src="https://via.placeholder.com/280x180?text=Image+Left+2" alt="Image Left 2">
-      <img src="https://via.placeholder.com/280x180?text=Image+Left+3" alt="Image Left 3">
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Left+1" alt="Image Left 1">
+        <div class="image-text">Text 1</div>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Left+2" alt="Image Left 2">
+        <div class="image-text">Text 2</div>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Left+3" alt="Image Left 3">
+        <div class="image-text">Text 3</div>
+      </div>
     </div>
 
     <!-- Contenu principal -->
@@ -101,9 +130,18 @@
 
     <!-- Bloc à droite -->
     <div class="sidebar">
-      <img src="https://via.placeholder.com/280x180?text=Image+Right+1" alt="Image Right 1">
-      <img src="https://via.placeholder.com/280x180?text=Image+Right+2" alt="Image Right 2">
-      <img src="https://via.placeholder.com/280x180?text=Image+Right+3" alt="Image Right 3">
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Right+1" alt="Image Right 1">
+        <div class="image-text">Text 4</div>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Right+2" alt="Image Right 2">
+        <div class="image-text">Text 5</div>
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/280x180?text=Image+Right+3" alt="Image Right 3">
+        <div class="image-text">Text 6</div>
+      </div>
     </div>
   </div>
 
