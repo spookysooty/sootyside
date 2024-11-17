@@ -17,22 +17,23 @@
       background-color: #ffffff; /* Fond blanc */
       min-height: 100%; /* Assure que le fond blanc prend au moins toute la hauteur de la page */
       display: flex; /* Utilisation de flexbox pour aligner et centrer le contenu */
-      flex-direction: row; /* Disposition en ligne, pour afficher le bloc principal et les blocs à droite */
-      justify-content: flex-start; /* Aligne les éléments à gauche */
+      flex-direction: row; /* Disposition en ligne, pour afficher les blocs à gauche, centre et droite */
+      justify-content: space-between; /* Espacement entre les blocs */
       align-items: flex-start; /* Aligne les éléments en haut */
       padding: 20px;
     }
 
-    /* Contenu principal (gauche) */
+    /* Contenu principal (centre) */
     .content {
-      flex: 1; /* Utilise tout l'espace restant */
+      flex: 2; /* Plus large que les colonnes de gauche et droite */
       text-align: center;
       padding: 20px;
     }
 
     .spooky-header {
-      width: 500px;
-      height: 500px;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
     }
 
     .title {
@@ -51,35 +52,46 @@
     }
 
     .stay-spooky {
-      width: 504px;
-      height: 390px;
+      width: 100%;
+      max-width: 504px;
+      height: auto;
     }
 
-    /* Bloc à droite (3 emplacements) */
+    /* Bloc à gauche et à droite (3 emplacements chacun) */
     .sidebar {
-      width: 300px; /* Largeur du bloc à droite */
-      padding: 20px;
+      width: 30%; /* Largeur des colonnes à gauche et à droite */
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
+      height: 100vh; /* Occupe toute la hauteur de l'écran */
     }
 
     .sidebar img {
-      width: 100%; /* Images qui remplissent leur conteneur */
-      margin-bottom: 10px;
+      width: 100%;
+      max-width: 280px; /* Largeur maximale de l'image */
+      height: auto;
+      margin-bottom: 20px;
     }
 
-    /* Optionnel : styles des images de la sidebar */
+    /* Enlever la marge du dernier élément */
     .sidebar img:last-child {
-      margin-bottom: 0; /* Enlève la marge du dernier élément */
+      margin-bottom: 0;
     }
+
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Contenu principal à gauche -->
+    <!-- Bloc à gauche -->
+    <div class="sidebar">
+      <img src="https://via.placeholder.com/280x180?text=Image+Left+1" alt="Image Left 1">
+      <img src="https://via.placeholder.com/280x180?text=Image+Left+2" alt="Image Left 2">
+      <img src="https://via.placeholder.com/280x180?text=Image+Left+3" alt="Image Left 3">
+    </div>
+
+    <!-- Contenu principal -->
     <div class="content">   
       <img src="https://i.ibb.co/J3SXth5/sooty-header-en.jpg" alt="sooty" class="spooky-header">
       <p class="title">I love all things spooky.</p>
@@ -89,9 +101,9 @@
 
     <!-- Bloc à droite -->
     <div class="sidebar">
-      <img src="https://via.placeholder.com/280x180?text=Image+1" alt="Placeholder Image 1">
-      <img src="https://via.placeholder.com/280x180?text=Image+2" alt="Placeholder Image 2">
-      <img src="https://via.placeholder.com/280x180?text=Image+3" alt="Placeholder Image 3">
+      <img src="https://via.placeholder.com/280x180?text=Image+Right+1" alt="Image Right 1">
+      <img src="https://via.placeholder.com/280x180?text=Image+Right+2" alt="Image Right 2">
+      <img src="https://via.placeholder.com/280x180?text=Image+Right+3" alt="Image Right 3">
     </div>
   </div>
 
