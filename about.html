@@ -17,13 +17,15 @@
       background-color: #ffffff; /* Fond blanc */
       min-height: 100%; /* Assure que le fond blanc prend au moins toute la hauteur de la page */
       display: flex; /* Utilisation de flexbox pour aligner et centrer le contenu */
-      flex-direction: column; /* Dispose les éléments verticalement */
-      justify-content: center; /* Centre le contenu verticalement */
-      align-items: center; /* Centre le contenu horizontalement */
+      flex-direction: row; /* Disposition en ligne, pour afficher le bloc principal et les blocs à droite */
+      justify-content: flex-start; /* Aligne les éléments à gauche */
+      align-items: flex-start; /* Aligne les éléments en haut */
+      padding: 20px;
     }
 
-    /* Styles généraux */
+    /* Contenu principal (gauche) */
     .content {
+      flex: 1; /* Utilise tout l'espace restant */
       text-align: center;
       padding: 20px;
     }
@@ -52,16 +54,44 @@
       width: 504px;
       height: 390px;
     }
+
+    /* Bloc à droite (3 emplacements) */
+    .sidebar {
+      width: 300px; /* Largeur du bloc à droite */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .sidebar img {
+      width: 100%; /* Images qui remplissent leur conteneur */
+      margin-bottom: 10px;
+    }
+
+    /* Optionnel : styles des images de la sidebar */
+    .sidebar img:last-child {
+      margin-bottom: 0; /* Enlève la marge du dernier élément */
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
+    <!-- Contenu principal à gauche -->
     <div class="content">   
       <img src="https://i.ibb.co/J3SXth5/sooty-header-en.jpg" alt="sooty" class="spooky-header">
       <p class="title">I love all things spooky.</p>
       <p class="description">I share my passions and interests, ranging from the spookiest to the least spooky.<br>Take a peek into what inspires me, and feel free to explore the content!</p>
       <img src="https://i.ibb.co/NTL025z/stay-spooky.jpg" alt="stay-spooky" class="stay-spooky">
+    </div>
+
+    <!-- Bloc à droite -->
+    <div class="sidebar">
+      <img src="https://via.placeholder.com/280x180?text=Image+1" alt="Placeholder Image 1">
+      <img src="https://via.placeholder.com/280x180?text=Image+2" alt="Placeholder Image 2">
+      <img src="https://via.placeholder.com/280x180?text=Image+3" alt="Placeholder Image 3">
     </div>
   </div>
 
