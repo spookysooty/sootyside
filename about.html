@@ -17,7 +17,7 @@
       background-color: #ffffff; /* Fond blanc */
       min-height: 100%; /* Assure que le fond blanc prend au moins toute la hauteur de la page */
       display: flex; /* Utilisation de flexbox pour aligner et centrer le contenu */
-      flex-direction: row; /* Disposition en ligne, pour afficher les blocs à gauche, centre et droite */
+      flex-direction: row; /* Disposition en ligne, pour afficher les blocs central et droite */
       justify-content: space-between; /* Espacement entre les blocs */
       align-items: flex-start; /* Aligne les éléments en haut */
       padding: 20px;
@@ -25,7 +25,7 @@
 
     /* Contenu principal (centre) */
     .content {
-      flex: 4; /* Le bloc principal prend maintenant 70% de la largeur */
+      flex: 4; /* Le bloc principal prend maintenant 75% de la largeur */
       text-align: center;
       padding: 20px;
     }
@@ -57,9 +57,9 @@
       height: auto;
     }
 
-    /* Bloc à gauche et à droite (3 emplacements chacun) */
+    /* Bloc à droite (3 emplacements) */
     .sidebar {
-      width: 25%; /* Réduction de la largeur des colonnes à gauche et à droite */
+      width: 25%; /* Réduction de la largeur des colonnes à droite */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -69,7 +69,7 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 350px; /* Réduit la largeur des images */
+      max-width: 350px; /* Largeur réduite des images */
       height: auto;
       margin-bottom: 20px;
       position: relative; /* Nécessaire pour positionner le texte dessus */
@@ -105,23 +105,7 @@
 <body>
 
   <div class="container">
-    <!-- Bloc à gauche -->
-    <div class="sidebar">
-      <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Left 1">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/350x250?text=Image+Left+2" alt="Image Left 2">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/350x250?text=Image+Left+3" alt="Image Left 3">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
-      </div>
-    </div>
-
-    <!-- Contenu principal -->
+    <!-- Contenu principal (au centre) -->
     <div class="content">   
       <img src="https://i.ibb.co/J3SXth5/sooty-header-en.jpg" alt="sooty" class="spooky-header">
       <p class="title">I love all things spooky.</p>
@@ -129,10 +113,10 @@
       <img src="https://i.ibb.co/NTL025z/stay-spooky.jpg" alt="stay-spooky" class="stay-spooky">
     </div>
 
-    <!-- Bloc à droite -->
+    <!-- Bloc à droite (3 emplacements) -->
     <div class="sidebar">
       <div class="image-container">
-        <img src="https://via.placeholder.com/350x250?text=Image+Right+1" alt="Image Right 1">
+        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
         <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
       </div>
       <div class="image-container">
