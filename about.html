@@ -25,7 +25,7 @@
 
     /* Contenu principal (centre) */
     .content {
-      flex: 2; /* Plus large que les colonnes de gauche et droite */
+      flex: 2; /* Plus large que les colonnes de gauche et à droite */
       text-align: center;
       padding: 20px;
     }
@@ -59,7 +59,7 @@
 
     /* Bloc à gauche et à droite (3 emplacements chacun) */
     .sidebar {
-      width: 40%; /* Largeur des colonnes à gauche et à droite (plus large qu'auparavant) */
+      width: 45%; /* Largeur des colonnes à gauche et à droite (plus large) */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -69,7 +69,7 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 380px; /* Largeur maximale de l'image (plus grande qu'auparavant) */
+      max-width: 450px; /* Largeur des images augmentée */
       height: auto;
       margin-bottom: 20px;
       position: relative; /* Nécessaire pour positionner le texte dessus */
@@ -81,12 +81,12 @@
       top: 50%; /* Centre verticalement */
       left: 50%; /* Centre horizontalement */
       transform: translate(-50%, -50%); /* Ajuste la position exacte au centre */
-      font-size: 20px;
+      font-size: 22px;
       font-family: 'Cooper Black', sans-serif;
-      color: #000000;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour mieux voir le texte */
-      padding: 5px 10px;
-      background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour le texte */
+      color: #f8f8f8; /* Texte de couleur blanche pour bien ressortir sur l'image sombre */
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* Ombre plus marquée pour améliorer la lisibilité */
+      padding: 5px 15px;
+      background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
       opacity: 0; /* Cache le texte par défaut */
       transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition du texte */
       text-align: center;
@@ -95,8 +95,9 @@
     /* Effet au survol (hover) */
     .sidebar img:hover .image-text {
       opacity: 1; /* Affiche le texte au survol */
-      background-color: rgba(255, 255, 255, 0.8); /* Change le fond en blanc transparent */
-      color: #ea7a42; /* Change la couleur du texte */
+      background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent pour l'effet de surbrillance */
+      color: #ffffff; /* Le texte devient blanc */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Ombre légère pour contraster sur fond orange */
     }
 
   </style>
@@ -108,15 +109,15 @@
     <div class="sidebar">
       <div class="image-container">
         <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Left 1">
-        <div class="image-text">OUTFIT</div>
+        <div class="image-text">Text 1</div>
       </div>
       <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Left 2">
-        <div class="image-text">OUTFIT</div>
+        <img src="https://via.placeholder.com/450x250?text=Image+Left+2" alt="Image Left 2">
+        <div class="image-text">Text 2</div>
       </div>
       <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Left 3">
-        <div class="image-text">OUTFIT</div>
+        <img src="https://via.placeholder.com/450x250?text=Image+Left+3" alt="Image Left 3">
+        <div class="image-text">Text 3</div>
       </div>
     </div>
 
@@ -131,16 +132,16 @@
     <!-- Bloc à droite -->
     <div class="sidebar">
       <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
-        <div class="image-text">OUTFIT</div>
+        <img src="https://via.placeholder.com/450x250?text=Image+Right+1" alt="Image Right 1">
+        <div class="image-text">Text 4</div>
       </div>
       <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 2">
-        <div class="image-text">OUTFIT</div>
+        <img src="https://via.placeholder.com/450x250?text=Image+Right+2" alt="Image Right 2">
+        <div class="image-text">Text 5</div>
       </div>
       <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 3">
-        <div class="image-text">OUTFIT</div>
+        <img src="https://via.placeholder.com/450x250?text=Image+Right+3" alt="Image Right 3">
+        <div class="image-text">Text 6</div>
       </div>
     </div>
   </div>
