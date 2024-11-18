@@ -3,27 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Site GitHub Pages</title>
+  <title>Page avec animation</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      text-align: center;
+    /* Reset des marges et bordures */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    h1 {
-      color: #333;
+
+    /* Style général du corps de la page */
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Empêche le scroll pendant l'animation */
     }
-    p {
-      color: #555;
-      font-size: 18px;
+
+    /* Fond orange couvrant toute la page */
+    .orange-section {
+      background-color: orange;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: transform 1s ease; /* Transition pour l'animation */
     }
+
+    /* Section blanche en bas */
+    .white-section {
+      background-color: white;
+      height: 20vh;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transition: transform 1s ease; /* Transition pour l'animation */
+    }
+
+    /* Image centrée au milieu de la page */
+    .center-content {
+      text-align: center;
+    }
+
+    .center-content img {
+      max-width: 80%;
+      height: auto;
+    }
+
+    /* Texte en dessous de l'image */
+    .center-content p {
+      font-size: 24px;
+      margin-top: 20px;
+      color: white;
+    }
+
+    /* Chevron en bas de la page */
+    .chevron {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Effet de survol sur le chevron */
+    .chevron:hover {
+      transform: translateX(-50%) translateY(5px);
+    }
+
   </style>
 </head>
 <body>
-  <h1>Bienvenue sur mon site GitHub Pages !</h1>
-  <p>Ce site est hébergé gratuitement avec GitHub Pages.</p>
-  <p><a href="https://github.com">Visiter GitHub</a></p>
+
+  <div class="orange-section" id="orange-section">
+    <!-- Contenu centré (image et texte) -->
+    <div class="center-content">
+      <img src="https://via.placeholder.com/400x300" alt="Image">
+      <p>Texte juste en-dessous de l'image</p>
+    </div>
+
+    <!-- Chevron pour déclencher l'animation -->
+    <div class="chevron" id="chevron">
+      &#8595; <!-- Symbole du chevron -->
+    </div>
+  </div>
+
+  <!-- Section blanche visible après l'animation -->
+  <div class="white-section" id="white-section"></div>
+
+  <script>
+    // Fonction d'animation au clic du chevron
+    document.getElementById('chevron').addEventListener('click', function() {
+      // Animation: slide de la partie orange vers le haut
+      document.getElementById('orange-section').style.transform = 'translateY(-100%)';
+      // Animation: slide de la partie blanche vers le bas
+      document.getElementById('white-section').style.transform = 'translateY(100%)';
+
+      // Attendre que l'animation se termine, puis rediriger
+      setTimeout(function() {
+        window.location.href = "https://spookysooty.github.io/sootycode/about.html";
+      }, 1000); // 1000ms = durée de l'animation
+    });
+  </script>
+
 </body>
 </html>
