@@ -17,52 +17,10 @@
       background-color: #ffffff; /* Fond blanc */
       min-height: 100%; /* Assure que le fond blanc prend au moins toute la hauteur de la page */
       display: flex; /* Utilisation de flexbox pour aligner et centrer le contenu */
-      flex-direction: row; /* Disposition en ligne, pour afficher les blocs de gauche, central et droit */
+      flex-direction: row; /* Disposition en ligne, pour afficher les blocs central et droit */
       justify-content: space-between; /* Espacement entre les blocs */
-      align-items: stretch; /* S'assurer que tous les blocs occupent la même hauteur */
+      align-items: stretch; /* S'assure que tous les blocs occupent la même hauteur */
       padding: 20px;
-    }
-
-    /* Bloc de gauche (4 images) */
-    .sidebar-left {
-      flex: 25%; /* Le bloc de gauche prend 25% de la largeur de l'écran */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      height: 100vh; /* Occupe toute la hauteur de l'écran */
-    }
-
-    .sidebar-left img {
-      width: 100%;
-      max-width: 280px; /* Limite la largeur des images */
-      height: auto;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .image-text {
-      position: absolute; /* Positionne le texte sur l'image */
-      top: 50%; /* Centre verticalement */
-      left: 50%; /* Centre horizontalement */
-      transform: translate(-50%, -50%); /* Ajuste la position exacte au centre */
-      font-size: 22px;
-      font-family: 'Cooper Black', sans-serif;
-      color: #f8f8f8; /* Texte de couleur blanche pour bien ressortir sur l'image sombre */
-      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* Ombre plus marquée pour améliorer la lisibilité */
-      padding: 5px 15px;
-      background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
-      opacity: 0; /* Cache le texte par défaut */
-      transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition du texte */
-      text-align: center;
-    }
-
-    /* Effet au survol (hover) */
-    .sidebar-left img:hover .image-text {
-      opacity: 1; /* Affiche le texte au survol */
-      background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent pour l'effet de surbrillance */
-      color: #ffffff; /* Le texte devient blanc */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Ombre légère pour contraster sur fond orange */
     }
 
     /* Contenu principal (centre) */
@@ -70,9 +28,6 @@
       flex: 65%; /* Le bloc central prend 65% de la largeur de la page */
       text-align: center;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Espace vertical pour s'assurer que l'ensemble du contenu est distribué sur la hauteur */
     }
 
     .spooky-header {
@@ -102,9 +57,9 @@
       height: auto;
     }
 
-    /* Bloc à droite (3 emplacements) */
-    .sidebar-right {
-      flex: 35%; /* Le bloc de droite prend 35% de la largeur de l'écran */
+    /* Bloc à droite (4 emplacements d'images) */
+    .sidebar {
+      flex: 35%; /* Le bloc de droite prend 35% de la largeur restante */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -112,12 +67,12 @@
       height: 100vh; /* Occupe toute la hauteur de l'écran */
     }
 
-    .sidebar-right img {
+    .sidebar img {
       width: 100%;
       max-width: 350px; /* Réduit la largeur des images */
       height: auto;
       margin-bottom: 20px;
-      position: relative;
+      position: relative; /* Nécessaire pour positionner le texte dessus */
     }
 
     /* Conteneur du texte */
@@ -138,7 +93,7 @@
     }
 
     /* Effet au survol (hover) */
-    .sidebar-right img:hover .image-text {
+    .sidebar img:hover .image-text {
       opacity: 1; /* Affiche le texte au survol */
       background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent pour l'effet de surbrillance */
       color: #ffffff; /* Le texte devient blanc */
@@ -150,26 +105,6 @@
 <body>
 
   <div class="container">
-    <!-- Bloc de gauche -->
-    <div class="sidebar-left">
-      <div class="image-container">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Left 1">
-        <div class="image-text">Outfit</div>
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/280x200?text=Image+Left+2" alt="Image Left 2">
-        <div class="image-text">Outfit</div>
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/280x200?text=Image+Left+3" alt="Image Left 3">
-        <div class="image-text">Outfit</div>
-      </div>
-      <div class="image-container">
-        <img src="https://via.placeholder.com/280x200?text=Image+Left+4" alt="Image Left 4">
-        <div class="image-text">Outfit</div>
-      </div>
-    </div>
-
     <!-- Contenu principal -->
     <div class="content">   
       <img src="https://i.ibb.co/J3SXth5/sooty-header-en.jpg" alt="sooty" class="spooky-header">
@@ -179,18 +114,22 @@
     </div>
 
     <!-- Bloc à droite -->
-    <div class="sidebar-right">
+    <div class="sidebar">
       <div class="image-container">
         <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
-        <div class="image-text">Outfit</div>
+        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
       </div>
       <div class="image-container">
         <img src="https://via.placeholder.com/350x250?text=Image+Right+2" alt="Image Right 2">
-        <div class="image-text">Outfit</div>
+        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
       </div>
       <div class="image-container">
         <img src="https://via.placeholder.com/350x250?text=Image+Right+3" alt="Image Right 3">
-        <div class="image-text">Outfit</div>
+        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
+      </div>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/350x250?text=Image+Right+4" alt="Image Right 4">
+        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
       </div>
     </div>
   </div>
