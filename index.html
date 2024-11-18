@@ -66,7 +66,7 @@
       justify-content: center;
       align-items: center;
       transition: transform 1s ease; /* Transition pour l'animation */
-      cursor: pointer;
+      cursor: pointer; /* Coursur pour signaler que l'on peut cliquer */
       overflow: hidden; /* Empêche l'image de déborder */
     }
 
@@ -139,7 +139,7 @@
   </div>
 
   <script>
-    // Fonction d'animation au clic du bloc blanc (image ou zone)
+    // Fonction d'animation au clic du bloc blanc (n'importe où dans le bloc, image incluse)
     document.querySelector('.white-section').addEventListener('click', function() {
       // Appliquer l'animation pour faire remplir le bloc blanc toute la page
       document.getElementById('white-section').style.animation = 'expandWhiteSection 1s forwards';
