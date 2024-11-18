@@ -18,8 +18,6 @@
       height: 100%;
       font-family: Arial, sans-serif;
       overflow: hidden; /* Empêche le scroll pendant l'animation */
-      margin: 0;
-      padding: 0;
     }
 
     /* Animation de rebond pour la section orange */
@@ -55,7 +53,6 @@
       animation: bounce 1.5s ease infinite; /* Animation de rebond */
       overflow: hidden; /* Empêche le débordement de l'image du fantôme */
       flex-direction: column; /* Aligne le contenu en colonne */
-      transition: transform 1s ease; /* Transition pour l'animation */
     }
 
     /* Section blanche en bas */
@@ -70,8 +67,6 @@
       align-items: center;
       transition: transform 1s ease; /* Transition pour l'animation */
       cursor: pointer;
-      overflow: hidden; /* Empêche l'image de déborder */
-      flex-direction: column; /* Aligne l'image et le texte au centre */
     }
 
     /* Contenu centré (image et texte) */
@@ -116,16 +111,6 @@
       }
     }
 
-    /* Animation pour étendre toute la page (orange + blanc) */
-    @keyframes expandPage {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-100vh); /* Déplace l'ensemble de la page vers le haut */
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -140,6 +125,7 @@
     <div class="chevron-orange">
       &#8595; <!-- Symbole du chevron vers le bas -->
     </div>
+
   </div>
 
   <!-- Section blanche visible après l'animation -->
@@ -155,7 +141,6 @@
     document.querySelector('.white-section').addEventListener('click', function() {
       // Appliquer l'animation pour faire remplir le bloc blanc toute la page
       document.getElementById('white-section').style.animation = 'expandWhiteSection 1s forwards';
-      document.querySelector('.orange-section').style.animation = 'expandPage 1s forwards'; // Anime la section orange
 
       // Attendre que l'animation se termine, puis rediriger
       setTimeout(function() {
