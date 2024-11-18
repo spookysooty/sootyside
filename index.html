@@ -61,6 +61,9 @@
       bottom: 0;
       width: 100%;
       transition: transform 1s ease; /* Transition pour l'animation */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Contenu centré (image et texte) */
@@ -113,6 +116,12 @@
       transform: translateX(-50%) translateY(5px);
     }
 
+    /* Image centrée dans la section blanche */
+    .white-section img {
+      max-width: 150px; /* Taille de l'image dans le bloc blanc */
+      height: auto;
+    }
+
   </style>
 </head>
 <body>
@@ -137,7 +146,10 @@
   </div>
 
   <!-- Section blanche visible après l'animation -->
-  <div class="white-section" id="white-section"></div>
+  <div class="white-section" id="white-section">
+    <!-- Image centrée dans la section blanche -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Heart_Emoji_2022.svg/2048px-Heart_Emoji_2022.svg.png" alt="Cœur" />
+  </div>
 
   <script>
     // Fonction d'animation au clic du chevron
