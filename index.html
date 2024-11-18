@@ -61,10 +61,10 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      transition: transform 1s ease; /* Transition pour l'animation */
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: transform 1s ease; /* Transition pour l'animation */
     }
 
     /* Contenu centré (image et texte) */
@@ -89,12 +89,6 @@
       font-size: 40px;
       color: white;
       cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    /* Effet de survol sur le chevron */
-    .chevron-bottom:hover {
-      transform: translateX(-50%) translateY(5px);
     }
 
     /* Chevron au bas de la section orange (avant la partie blanche) */
@@ -106,11 +100,6 @@
       font-size: 40px;
       color: white;
       cursor: pointer;
-    }
-
-    /* Effet de survol sur le chevron de la section orange */
-    .chevron-orange:hover {
-      transform: translateX(-50%) translateY(5px);
     }
 
     /* Image centrée dans la section blanche */
@@ -132,10 +121,11 @@
       <p>step into the sooty side</p>
     </div>
 
-    <!-- Chevron pour déclencher l'animation (en bas de la page) -->
-    <div class="chevron-bottom" id="chevron">
+    <!-- Chevron au bas de la section orange, juste avant la partie blanche -->
+    <div class="chevron-orange">
       &#8595; <!-- Symbole du chevron vers le bas -->
     </div>
+
   </div>
 
   <!-- Section blanche visible après l'animation -->
@@ -147,10 +137,8 @@
   </div>
 
   <script>
-    // Fonction d'animation au clic du chevron
-    document.getElementById('chevron').addEventListener('click', function() {
-      // Animation: slide de la partie orange vers le haut
-      document.getElementById('orange-section').style.transform = 'translateY(-100%)';
+    // Fonction d'animation au clic de l'image
+    document.querySelector('.white-section img').addEventListener('click', function() {
       // Animation: slide de la partie blanche vers le bas
       document.getElementById('white-section').style.transform = 'translateY(100%)';
 
