@@ -68,6 +68,7 @@
       transition: transform 1s ease; /* Transition pour l'animation */
       cursor: pointer; /* Coursur pour signaler que l'on peut cliquer */
       overflow: hidden; /* Empêche l'image de déborder */
+      flex-direction: column; /* Aligne l'image et le texte au centre */
     }
 
     /* Contenu centré (image et texte) */
@@ -103,7 +104,7 @@
       transition: transform 1s ease; /* Transition pour l'animation de l'image */
     }
 
-    /* Animation pour l'extension du bloc blanc */
+    /* Animation pour l'extension du bloc blanc (y compris image et espace vide) */
     @keyframes expandWhiteSection {
       0% {
         height: 20vh;
