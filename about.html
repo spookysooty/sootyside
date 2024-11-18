@@ -5,99 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Sooty</title>
   <style>
+    /* Reset global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     /* Assurez-vous que html et body prennent toute la hauteur */
     html, body {
-      height: 100%; /* Prend 100% de la hauteur de la fenêtre */
-      margin: 0; /* Supprime les marges par défaut du body */
-      padding: 0; /* Supprime les paddings par défaut du body */
+      height: 100%;
+      font-family: 'Arial', sans-serif; /* Police plus neutre et moderne */
     }
 
-    /* Styles pour le conteneur */
+    /* Styles pour le conteneur principal */
     .container {
-      background-color: #ffffff; /* Fond blanc */
-      min-height: 100%; /* Assure que le fond blanc prend au moins toute la hauteur de la page */
-      display: flex; /* Utilisation de flexbox pour aligner et centrer le contenu */
-      flex-direction: row; /* Disposition en ligne, pour afficher les blocs central et droit */
-      justify-content: space-between; /* Espacement entre les blocs */
-      align-items: stretch; /* S'assure que tous les blocs occupent la même hauteur */
+      background-color: #ffffff;
+      min-height: 100%;
+      display: flex;
+      flex-wrap: wrap; /* Permet au contenu de s'ajuster sur plusieurs lignes si nécessaire */
+      justify-content: space-between;
       padding: 20px;
     }
 
-    /* Contenu principal (centre) */
+    /* Contenu principal (au centre) */
     .content {
-      flex: 65%; /* Le bloc central prend 65% de la largeur de la page */
+      flex: 1 1 60%; /* Prend 60% de la largeur par défaut */
       text-align: center;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     .spooky-header {
       width: 100%;
       max-width: 500px;
       height: auto;
+      margin-bottom: 20px;
     }
 
     .title {
       color: #ea7a42;
-      font-size: 40px;
-      font-family: 'Cooper Black', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .description {
       color: #010101;
-      font-size: 23px;
-      font-family: 'Cooper Black', sans-serif;
-      margin-top: 5px;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .stay-spooky {
       width: 100%;
-      max-width: 504px;
+      max-width: 500px;
       height: auto;
     }
 
-    /* Bloc à droite (4 emplacements d'images) */
+    /* Bloc à droite (colonne avec 4 images) */
     .sidebar {
-      flex: 35%; /* Le bloc de droite prend 35% de la largeur restante */
+      flex: 1 1 35%; /* Prend 35% de la largeur par défaut */
       display: flex;
       flex-direction: column;
+      gap: 20px;
+      justify-content: flex-start;
       align-items: center;
-      justify-content: space-between;
-      height: 100vh; /* Occupe toute la hauteur de l'écran */
     }
 
     .sidebar img {
       width: 100%;
-      max-width: 350px; /* Réduit la largeur des images */
+      max-width: 350px; /* Limite la taille des images */
       height: auto;
-      margin-bottom: 20px;
-      position: relative; /* Nécessaire pour positionner le texte dessus */
+      border-radius: 10px; /* Arrondir les bords des images */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Conteneur du texte */
+    .sidebar img:hover {
+      transform: scale(1.05); /* Effet de zoom au survol */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Conteneur du texte pour les images */
     .image-text {
-      position: absolute; /* Positionne le texte sur l'image */
-      top: 50%; /* Centre verticalement */
-      left: 50%; /* Centre horizontalement */
-      transform: translate(-50%, -50%); /* Ajuste la position exacte au centre */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 22px;
-      font-family: 'Cooper Black', sans-serif;
-      color: #f8f8f8; /* Texte de couleur blanche pour bien ressortir sur l'image sombre */
-      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* Ombre plus marquée pour améliorer la lisibilité */
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       padding: 5px 15px;
-      background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
-      opacity: 0; /* Cache le texte par défaut */
-      transition: opacity 0.3s ease-in-out; /* Transition douce pour l'apparition du texte */
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
       text-align: center;
     }
 
-    /* Effet au survol (hover) */
-    .sidebar img:hover .image-text {
-      opacity: 1; /* Affiche le texte au survol */
-      background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent pour l'effet de surbrillance */
-      color: #ffffff; /* Le texte devient blanc */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Ombre légère pour contraster sur fond orange */
+    /* Effet de survol pour afficher le texte */
+    .sidebar .image-container:hover .image-text {
+      opacity: 1;
+      background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent au survol */
+    }
+
+    /* Médias queries pour responsive design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .sidebar {
+        flex: 1 1 100%;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .sidebar img {
+        max-width: 300px;
+      }
+
+      .spooky-header,
+      .stay-spooky {
+        max-width: 100%;
+      }
     }
 
   </style>
@@ -115,21 +152,21 @@
 
     <!-- Bloc à droite -->
     <div class="sidebar">
-      <div class="image-container">
+      <div class="image-container" style="position: relative;">
         <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
+        <div class="image-text">Outfit</div>
       </div>
-      <div class="image-container">
+      <div class="image-container" style="position: relative;">
         <img src="https://via.placeholder.com/350x250?text=Image+Right+2" alt="Image Right 2">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
+        <div class="image-text">Outfit</div>
       </div>
-      <div class="image-container">
+      <div class="image-container" style="position: relative;">
         <img src="https://via.placeholder.com/350x250?text=Image+Right+3" alt="Image Right 3">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
+        <div class="image-text">Outfit</div>
       </div>
-      <div class="image-container">
+      <div class="image-container" style="position: relative;">
         <img src="https://via.placeholder.com/350x250?text=Image+Right+4" alt="Image Right 4">
-        <div class="image-text">Outfit</div> <!-- Texte ajouté ici -->
+        <div class="image-text">Outfit</div>
       </div>
     </div>
   </div>
