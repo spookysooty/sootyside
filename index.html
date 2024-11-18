@@ -45,12 +45,13 @@
     /* Fond orange couvrant toute la page */
     .orange-section {
       background-color: orange;
-      height: 100vh;
+      height: 90vh; /* Réduit la hauteur pour éviter que l'image déborde */
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       animation: bounce 1.5s ease infinite; /* Animation de rebond */
+      overflow: hidden; /* Empêche le débordement de l'image du fantôme */
     }
 
     /* Section blanche en bas */
@@ -148,7 +149,7 @@
   <!-- Section blanche visible après l'animation -->
   <div class="white-section" id="white-section">
     <!-- Image centrée dans la section blanche -->
-    <img src="https://i.ibb.co/rF880Tw/ghost-heart.jpg" alt="ghost-heart" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Heart_Emoji_2022.svg/2048px-Heart_Emoji_2022.svg.png" alt="Cœur" />
   </div>
 
   <script>
