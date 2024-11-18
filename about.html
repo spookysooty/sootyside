@@ -27,14 +27,14 @@
       background-color: #ffffff;
       min-height: 100%;
       display: flex;
-      flex-wrap: wrap; /* Permet au contenu de s'ajuster sur plusieurs lignes si nécessaire */
+      flex-wrap: wrap;
       justify-content: space-between;
       padding: 20px;
     }
 
     /* Contenu principal (au centre) */
     .content {
-      flex: 1 1 60%; /* Prend 60% de la largeur par défaut */
+      flex: 1 1 60%;
       text-align: center;
       padding: 20px;
       box-sizing: border-box;
@@ -69,7 +69,7 @@
 
     /* Bloc à droite (colonne avec 4 images) */
     .sidebar {
-      flex: 1 1 35%; /* Prend 35% de la largeur par défaut */
+      flex: 1 1 35%;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -79,15 +79,15 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 350px; /* Limite la taille des images */
+      max-width: 350px;
       height: auto;
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative; /* Nécessaire pour positionner le texte par-dessus l'image */
+      position: relative;
     }
 
     .sidebar img:hover {
-      transform: scale(1.05); /* Effet de zoom au survol */
+      transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
@@ -98,18 +98,17 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 22px;
-      font-weight: normal; /* Cooper Black étant déjà en gras */
-      color: #fff;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      font-weight: normal;
+      color: #ffffff;  /* Blanc pur pour plus de contraste */
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Ombre portée plus forte */
       padding: 5px 15px;
-      background-color: rgba(0, 0, 0, 0.5); /* Fond sombre de base */
-      opacity: 1; /* Rendre le texte visible par défaut */
-      transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
       text-align: center;
-      z-index: 1; /* S'assurer que le texte est au-dessus de l'image */
+      z-index: 1;
+      opacity: 1; /* Visible par défaut */
+      transition: background-color 0.3s ease-in-out;
     }
 
-    /* Effet de survol pour afficher le texte et changer la couleur de fond */
+    /* Effet de survol pour afficher le texte avec changement de fond */
     .sidebar .image-container:hover .image-text {
       background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent au survol */
     }
