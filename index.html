@@ -20,6 +20,28 @@
       overflow: hidden; /* Empêche le scroll pendant l'animation */
     }
 
+    /* Animation de rebond pour la section orange */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0); /* Position initiale */
+      }
+      20% {
+        transform: translateY(-10px); /* Légère montée */
+      }
+      40% {
+        transform: translateY(0); /* Retour à la position initiale */
+      }
+      60% {
+        transform: translateY(-5px); /* Petite montée */
+      }
+      80% {
+        transform: translateY(0); /* Retour à la position initiale */
+      }
+      100% {
+        transform: translateY(0); /* Stabilisation à la position finale */
+      }
+    }
+
     /* Fond orange couvrant toute la page */
     .orange-section {
       background-color: orange;
@@ -28,7 +50,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      transition: transform 1s ease; /* Transition pour l'animation */
+      animation: bounce 1.5s ease infinite; /* Animation de rebond */
     }
 
     /* Section blanche en bas */
