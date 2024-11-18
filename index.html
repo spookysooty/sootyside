@@ -100,11 +100,10 @@
 
     /* Image centrée dans la section blanche */
     .white-section img {
-      width: 100%; /* Image s'étend sur toute la largeur de la section blanche */
-      height: 100%; /* L'image s'ajuste à la hauteur de la section */
-      object-fit: cover; /* L'image couvre toute la section sans être coupée */
-      position: absolute;
-      top: 0; /* L'image est fixée en haut de la section */
+      max-width: 150px; /* Taille de l'image dans le bloc blanc */
+      height: auto;
+      position: relative;
+      top: -40px; /* Remonte l'image de 40px (ajusté pour être plus haut) */
     }
 
     /* Animation pour l'extension du bloc blanc */
@@ -117,13 +116,13 @@
       }
     }
 
-    /* Animation pour l'extension de la page entière */
+    /* Animation pour étendre toute la page (orange + blanc) */
     @keyframes expandPage {
       0% {
         transform: translateY(0);
       }
       100% {
-        transform: translateY(-100vh); /* Déplace toute la page vers le haut */
+        transform: translateY(-100vh); /* Déplace l'ensemble de la page vers le haut */
       }
     }
 
