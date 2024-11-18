@@ -27,14 +27,14 @@
       background-color: #ffffff;
       min-height: 100%;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Permet au contenu de s'ajuster sur plusieurs lignes si nécessaire */
       justify-content: space-between;
       padding: 20px;
     }
 
     /* Contenu principal (au centre) */
     .content {
-      flex: 1 1 60%;
+      flex: 1 1 60%; /* Prend 60% de la largeur par défaut */
       text-align: center;
       padding: 20px;
       box-sizing: border-box;
@@ -69,7 +69,7 @@
 
     /* Bloc à droite (colonne avec 4 images) */
     .sidebar {
-      flex: 1 1 35%;
+      flex: 1 1 35%; /* Prend 35% de la largeur par défaut */
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -79,37 +79,37 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 350px;
+      max-width: 350px; /* Limite la taille des images */
       height: auto;
       border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; /* Nécessaire pour positionner le texte par-dessus l'image */
     }
 
     .sidebar img:hover {
-      transform: scale(1.05);
+      transform: scale(1.05); /* Effet de zoom au survol */
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      filter: grayscale(100%); /* Applique l'effet de grisaille au survol */
     }
 
     /* Conteneur du texte pour les images */
     .image-text {
       position: absolute;
       top: 50%;
-      left: 0; /* Aligne le texte à gauche */
-      transform: translateY(-50%); /* Garde le texte centré verticalement */
+      left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 22px;
-      font-weight: normal;
-      color: #ffffff;
-      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Ombre portée plus forte */
+      font-weight: normal; /* Cooper Black étant déjà en gras */
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       padding: 5px 15px;
-      text-align: left; /* Aligner le texte à gauche */
-      z-index: 1;
-      opacity: 1; /* Visible par défaut */
-      transition: background-color 0.3s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.5); /* Fond sombre de base */
+      opacity: 1; /* Rendre le texte visible par défaut */
+      transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      text-align: center;
+      z-index: 1; /* S'assurer que le texte est au-dessus de l'image */
     }
 
-    /* Effet de survol pour afficher le texte avec changement de fond */
+    /* Effet de survol pour afficher le texte et changer la couleur de fond */
     .sidebar .image-container:hover .image-text {
       background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent au survol */
     }
@@ -159,25 +159,25 @@
     <div class="sidebar">
       <div class="image-container" style="position: relative;">
         <a href="https://example.com/outfit1" target="_blank">
-          <img src="https://i.ibb.co/PC5G4Xq/outfit-2.jpg" alt="Image Right 1">
+          <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
           <div class="image-text">Outfit 1</div>
         </a>
       </div>
       <div class="image-container" style="position: relative;">
         <a href="https://example.com/outfit2" target="_blank">
-          <img src="https://i.ibb.co/PC5G4Xq/outfit-2.jpg" alt="Image Right 2">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+2" alt="Image Right 2">
           <div class="image-text">Outfit 2</div>
         </a>
       </div>
       <div class="image-container" style="position: relative;">
         <a href="https://example.com/outfit3" target="_blank">
-          <img src="https://i.ibb.co/PC5G4Xq/outfit-2.jpg" alt="Image Right 3">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+3" alt="Image Right 3">
           <div class="image-text">Outfit 3</div>
         </a>
       </div>
       <div class="image-container" style="position: relative;">
         <a href="https://example.com/outfit4" target="_blank">
-          <img src="https://i.ibb.co/PC5G4Xq/outfit-2.jpg" alt="Image Right 4">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+4" alt="Image Right 4">
           <div class="image-text">Outfit 4</div>
         </a>
       </div>
