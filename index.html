@@ -66,9 +66,7 @@
       justify-content: center;
       align-items: center;
       transition: transform 1s ease; /* Transition pour l'animation */
-      cursor: pointer; /* Coursur pour signaler que l'on peut cliquer */
-      overflow: hidden; /* Empêche l'image de déborder */
-      flex-direction: column; /* Aligne l'image et le texte au centre */
+      cursor: pointer;
     }
 
     /* Contenu centré (image et texte) */
@@ -101,11 +99,9 @@
       height: auto;
       position: relative;
       top: -40px; /* Remonte l'image de 40px (ajusté pour être plus haut) */
-      object-fit: contain; /* Assure que l'image garde ses proportions sans être coupée */
-      transition: transform 1s ease; /* Transition pour l'animation de l'image */
     }
 
-    /* Animation pour l'extension du bloc blanc (y compris image et espace vide) */
+    /* Animation pour l'extension du bloc blanc */
     @keyframes expandWhiteSection {
       0% {
         height: 20vh;
@@ -141,11 +137,10 @@
   </div>
 
   <script>
-    // Fonction d'animation au clic du bloc blanc (n'importe où dans le bloc, image incluse)
+    // Fonction d'animation au clic du bloc blanc (image ou zone)
     document.querySelector('.white-section').addEventListener('click', function() {
       // Appliquer l'animation pour faire remplir le bloc blanc toute la page
       document.getElementById('white-section').style.animation = 'expandWhiteSection 1s forwards';
-      document.querySelector('.white-section img').style.transform = 'scale(1.2)';  // Agrandit l'image pendant l'animation
 
       // Attendre que l'animation se termine, puis rediriger
       setTimeout(function() {
