@@ -15,7 +15,7 @@
     /* Assurez-vous que html et body prennent toute la hauteur */
     html, body {
       height: 100%;
-      font-family: 'Arial', sans-serif; /* Police plus neutre et moderne */
+      font-family: 'Arial', sans-serif;
     }
 
     /* Styles pour le conteneur principal */
@@ -79,6 +79,7 @@
       height: auto;
       border-radius: 10px; /* Arrondir les bords des images */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative; /* Nécessaire pour positionner le texte par-dessus l'image */
     }
 
     .sidebar img:hover {
@@ -101,6 +102,7 @@
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       text-align: center;
+      z-index: 1; /* S'assurer que le texte est au-dessus de l'image */
     }
 
     /* Effet de survol pour afficher le texte */
@@ -153,20 +155,28 @@
     <!-- Bloc à droite -->
     <div class="sidebar">
       <div class="image-container" style="position: relative;">
-        <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
-        <div class="image-text">Outfit</div>
+        <a href="https://example.com/outfit1" target="_blank">
+          <img src="https://i.ibb.co/GsdfVL5/outfit.jpg" alt="Image Right 1">
+          <div class="image-text">Outfit 1</div>
+        </a>
       </div>
       <div class="image-container" style="position: relative;">
-        <img src="https://via.placeholder.com/350x250?text=Image+Right+2" alt="Image Right 2">
-        <div class="image-text">Outfit</div>
+        <a href="https://example.com/outfit2" target="_blank">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+2" alt="Image Right 2">
+          <div class="image-text">Outfit 2</div>
+        </a>
       </div>
       <div class="image-container" style="position: relative;">
-        <img src="https://via.placeholder.com/350x250?text=Image+Right+3" alt="Image Right 3">
-        <div class="image-text">Outfit</div>
+        <a href="https://example.com/outfit3" target="_blank">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+3" alt="Image Right 3">
+          <div class="image-text">Outfit 3</div>
+        </a>
       </div>
       <div class="image-container" style="position: relative;">
-        <img src="https://via.placeholder.com/350x250?text=Image+Right+4" alt="Image Right 4">
-        <div class="image-text">Outfit</div>
+        <a href="https://example.com/outfit4" target="_blank">
+          <img src="https://via.placeholder.com/350x250?text=Image+Right+4" alt="Image Right 4">
+          <div class="image-text">Outfit 4</div>
+        </a>
       </div>
     </div>
   </div>
