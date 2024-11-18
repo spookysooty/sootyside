@@ -58,8 +58,8 @@
       color: white;
     }
 
-    /* Chevron en bas de la page */
-    .chevron {
+    /* Chevron en bas de la page (déclencheur de l'animation) */
+    .chevron-bottom {
       position: absolute;
       bottom: 10px;
       left: 50%;
@@ -71,7 +71,23 @@
     }
 
     /* Effet de survol sur le chevron */
-    .chevron:hover {
+    .chevron-bottom:hover {
+      transform: translateX(-50%) translateY(5px);
+    }
+
+    /* Chevron au bas de la section orange (avant la partie blanche) */
+    .chevron-orange {
+      position: absolute;
+      bottom: 30px; /* Un peu plus bas que l'image/texte */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Effet de survol sur le chevron de la section orange */
+    .chevron-orange:hover {
       transform: translateX(-50%) translateY(5px);
     }
 
@@ -83,12 +99,17 @@
     <!-- Contenu centré (image et texte) -->
     <div class="center-content">
       <img src="https://via.placeholder.com/400x300" alt="Image">
-      <p>Enter in the sooty side</p>
+      <p>Texte juste en-dessous de l'image</p>
     </div>
 
-    <!-- Chevron pour déclencher l'animation -->
-    <div class="chevron" id="chevron">
-      &#8595; <!-- Symbole du chevron -->
+    <!-- Chevron au bas de la section orange, juste avant la partie blanche -->
+    <div class="chevron-orange">
+      &#8595; <!-- Chevron vers le bas -->
+    </div>
+
+    <!-- Chevron pour déclencher l'animation (en bas de la page) -->
+    <div class="chevron-bottom" id="chevron">
+      &#8595; <!-- Symbole du chevron vers le bas -->
     </div>
   </div>
 
