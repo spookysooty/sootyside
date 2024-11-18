@@ -67,6 +67,7 @@
       align-items: center;
       transition: transform 1s ease; /* Transition pour l'animation */
       cursor: pointer;
+      overflow: hidden; /* Empêche l'image de déborder */
     }
 
     /* Contenu centré (image et texte) */
@@ -99,6 +100,7 @@
       height: auto;
       position: relative;
       top: -40px; /* Remonte l'image de 40px (ajusté pour être plus haut) */
+      transition: transform 1s ease; /* Transition pour l'animation de l'image */
     }
 
     /* Animation pour l'extension du bloc blanc */
@@ -141,6 +143,7 @@
     document.querySelector('.white-section').addEventListener('click', function() {
       // Appliquer l'animation pour faire remplir le bloc blanc toute la page
       document.getElementById('white-section').style.animation = 'expandWhiteSection 1s forwards';
+      document.querySelector('.white-section img').style.transform = 'scale(1.2)';  // Agrandit l'image pendant l'animation
 
       // Attendre que l'animation se termine, puis rediriger
       setTimeout(function() {
