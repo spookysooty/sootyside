@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Sooty</title>
 
-  <!-- Lien vers la police Cooper Black (depuis Font Squirrel ou un autre service externe) -->
+  <!-- Lien vers la police Cooper Black -->
   <link href="https://fonts.googleapis.com/css2?family=Cooper+Black&display=swap" rel="stylesheet">
 
   <style>
@@ -50,7 +50,7 @@
     .title {
       color: #ea7a42;
       font-size: 36px;
-      font-weight: normal; /* Cooper Black étant déjà en gras, pas besoin de 'bold' */
+      font-weight: normal;
       margin-bottom: 10px;
     }
 
@@ -81,7 +81,7 @@
       width: 100%;
       max-width: 350px; /* Limite la taille des images */
       height: auto;
-      border-radius: 10px; /* Arrondir les bords des images */
+      border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative; /* Nécessaire pour positionner le texte par-dessus l'image */
     }
@@ -102,16 +102,15 @@
       color: #fff;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
       padding: 5px 15px;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      background-color: rgba(0, 0, 0, 0.5); /* Fond sombre de base */
+      opacity: 1; /* Rendre le texte visible par défaut */
+      transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
       text-align: center;
       z-index: 1; /* S'assurer que le texte est au-dessus de l'image */
     }
 
-    /* Effet de survol pour afficher le texte */
+    /* Effet de survol pour afficher le texte et changer la couleur de fond */
     .sidebar .image-container:hover .image-text {
-      opacity: 1;
       background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent au survol */
     }
 
