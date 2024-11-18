@@ -106,14 +106,13 @@
       text-align: left; /* Aligner le texte à gauche */
       z-index: 1;
       opacity: 1; /* Visible par défaut */
-      transition: background-color 0.3s ease-in-out;
       line-height: 1.1; /* Ajout de l'interligne pour espacer les lignes de texte */
     }
 
-    /* Effet de survol pour afficher le texte avec changement de fond */
-    .sidebar .image-container:hover .image-text {
-      background-color: rgba(255, 165, 0, 0.8); /* Fond orange semi-transparent au survol */
-    }
+    /* Supprimer l'effet de survol orange sur le texte */
+    /* .sidebar .image-container:hover .image-text {
+      background-color: rgba(255, 165, 0, 0.8);  * Fond orange semi-transparent au survol *
+    } */
 
     /* Médias queries pour responsive design */
     @media (max-width: 768px) {
@@ -162,7 +161,7 @@
         <a href="https://example.com/outfit1" target="_blank">
           <img src="https://i.ibb.co/PC5G4Xq/outfit-2.jpg" alt="Image Right 1">
           <div class="image-text">
-            spooky<br>outfit
+            spooky<br>outfits
           </div>
         </a>
       </div>
