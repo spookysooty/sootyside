@@ -82,27 +82,28 @@
       max-width: 350px;
       height: auto;
       border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
       position: relative;
     }
 
     .sidebar img:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      filter: grayscale(100%); /* Applique l'effet de grisaille au survol */
     }
 
     /* Conteneur du texte pour les images */
     .image-text {
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 0; /* Aligne le texte à gauche */
+      transform: translateY(-50%); /* Garde le texte centré verticalement */
       font-size: 22px;
       font-weight: normal;
-      color: #ffffff;  /* Blanc pur pour plus de contraste */
+      color: #ffffff;
       text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Ombre portée plus forte */
       padding: 5px 15px;
-      text-align: center;
+      text-align: left; /* Aligner le texte à gauche */
       z-index: 1;
       opacity: 1; /* Visible par défaut */
       transition: background-color 0.3s ease-in-out;
