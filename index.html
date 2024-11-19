@@ -147,15 +147,7 @@
       setTimeout(function() {
         window.location.href = "https://spookysooty.github.io/sootycode/about.html";
       }, 1000); // 1000ms = durée de l'animation
-    }
-
-    // Ajouter un gestionnaire d'événements au clic sur la section ou l'image
-    document.querySelector('.image-container').addEventListener('click', startAnimation);
-    document.querySelector('.image-container').addEventListener('click', function(event) {
-      // Empêcher la propagation de l'événement pour éviter qu'il ne se déclenche deux fois
-      event.stopPropagation();
-      startAnimation();
-    });
+    
   </script>
 
 </body>
