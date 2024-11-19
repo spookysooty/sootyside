@@ -90,15 +90,15 @@
       color: #999;
     }
 
+    /* Supprimer la sous-ligne des liens */
+    a {
+      text-decoration: none; /* Enlève la sous-ligne */
+      color: inherit; /* Hérite de la couleur du texte parent */
+    }
+
     /* Footer */
     footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      display: none; /* Supprime le bandeau de copyright */
     }
   </style>
 </head>
@@ -161,10 +161,6 @@
       <!-- Ajoutez d'autres articles ici -->
     </div>
   </div>
-
-  <footer>
-    <p>&copy; 2024 VotreSiteWeb.com - Tous droits réservés</p>
-  </footer>
 
 </body>
 </html>
