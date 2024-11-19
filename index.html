@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -115,7 +115,6 @@
 </head>
 <body>
 
-      
   <div class="orange-section" id="orange-section">
     <!-- Contenu centré (image et texte) -->
     <div class="center-content">
@@ -126,7 +125,6 @@
     <div class="chevron-orange">
       &#8595; <!-- Symbole du chevron vers le bas -->
     </div>
-
   </div>
 
   <!-- Section blanche visible après l'animation -->
@@ -138,8 +136,8 @@
   </div>
 
   <script>
-    // Fonction d'animation au clic suur toute la page
-    document.querySelector('.white-section').addEventListener('click', function() {
+    // Fonction d'animation au clic sur le bloc blanc ou l'image
+    function startAnimation() {
       // Appliquer l'animation pour faire remplir le bloc blanc toute la page
       document.getElementById('white-section').style.animation = 'expandWhiteSection 1s forwards';
 
@@ -147,8 +145,16 @@
       setTimeout(function() {
         window.location.href = "https://spookysooty.github.io/sootycode/about.html";
       }, 1000); // 1000ms = durée de l'animation
+    }
+
+    // Ajouter un gestionnaire d'événements au clic sur la section ou l'image
+    document.querySelector('.white-section').addEventListener('click', startAnimation);
+    document.querySelector('.white-section img').addEventListener('click', function(event) {
+      // Empêcher la propagation de l'événement pour éviter qu'il ne se déclenche deux fois
+      event.stopPropagation();
+      startAnimation();
     });
   </script>
-  
+
 </body>
 </html>
